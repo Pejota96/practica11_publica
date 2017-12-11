@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <title>Practica11</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="practica11.css">
+</head>
+<body>
+<h1 class="jumbotron">Lista aleatoria de Usuarios</h1>
+
+<button id="hazlo" class="btn btn-primary btn-lg btn-block">Hazlo!</button>
+
+
+<script src="../jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $("#hazlo").on("click", function(){
+            alert("click");
+            $.ajax ({
+                url: 'https://randomuser.me/api/?results=50&inc=picture,name,email,location',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                }
+            });
+        })
+    });
+</script>
+</body>
+</html>
